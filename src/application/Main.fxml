@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem id="openFileBtn" mnemonicParsing="false" onAction="#handleOpenFile" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem id="quitBtn" mnemonicParsing="false" onAction="#handleQuit" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.7304075235109718" prefHeight="371.0" prefWidth="640.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ImageView id="outlinedImageView" fx:id="outlinedImageView" fitHeight="369.0" fitWidth="462.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox prefHeight="369.0" prefWidth="168.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="165.0" text="Original Image" />
+                              <ImageView id="originalImageView" fx:id="originalImageView" fitHeight="134.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label prefHeight="17.0" prefWidth="165.0" text="Black and White Image" />
+                              <ImageView id="blackWhiteImageView" fx:id="blackWhiteImageView" fitHeight="134.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+    </AnchorPane>
+      <Slider fx:id="thresholdSlider" blockIncrement="8.0" max="255.0" value="127.0" />
+      <Slider fx:id="noiseReductionSlider" value="1.0" />
+  </children>
+</VBox>
